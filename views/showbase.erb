@@ -1,0 +1,59 @@
+<h2>Вывод баз данных</h2>
+
+
+
+
+
+
+
+<form action="/showbase" method ="post">
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Объект</label>
+    <input type="text" class="form-control"  placeholder="Название объекта" name ="object" value = <%= @object %>>
+    <small id="emailHelp" class="form-text text-muted">Введите наименование объекта для отображения данных </small>
+
+  </div>
+
+
+  
+  <button type="submit" class="btn btn-primary">Вывести результат</button>
+
+
+</form>
+
+
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Room</th>
+      <th>Spot</th>
+      <th>Volume</th>
+      
+    </tr>
+  </thead>
+
+<% @c= 1 %>
+
+<% @hh.each do |k, v| %>
+
+
+  <tbody>
+    <tr>
+   
+      <th scope="row"><%= @c %></th>
+      <td><%= @hh[@c][1] %></td>
+      <td><%= @hh[@c][2] %></td>
+      <td><%= @hh[@c][3] %>m3/prh</td>
+    </tr>
+  
+  </tbody>
+  <% @c = @c + 1 %>
+
+  <% end %>
+</table>

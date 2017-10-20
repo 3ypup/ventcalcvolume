@@ -1,0 +1,77 @@
+<h2>Расчет объема воздуха</h2>
+
+
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" href="/aircount/round/">Круглое</a>
+  </li>
+  
+  </ul>
+
+<div class="alert alert-success" role="alert">
+  Прямоугольное сечение
+</div>
+
+<img src="http://www.pvkspb.ru/upload/iblock/1d1/1d1d9c11a4699cfb9cd63a5acdcb0f3d.jpg" width="1530" height="2048" alt="1530x2048 px" title="1530x2048 px" class="js-image_in_comments" style="width: 25%; height: 25%;">
+
+
+
+
+
+<form action="/aircount/square" method ="post">
+
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Объект</label>
+    <input type="text" class="form-control"  placeholder="Название объекта" name ="object" value = <%= @object %>>
+    <small id="emailHelp" class="form-text text-muted">Введите наименование объекта</small>
+
+  </div>
+
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Помещение</label>
+    <input type="text" class="form-control"  placeholder="Помещение" name ="room" value = <%= @room %>>
+    <small id="emailHelp" class="form-text text-muted">Введите название помещения или номер комнаты</small>
+
+  </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Точка замера</label>
+    <input type="text" class="form-control"  placeholder="Точка замера" name ="spot" value = <%= @spot %>>
+    <small id="emailHelp" class="form-text text-muted">Введите номер решетки или другой идетнификатор</small>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Сторона 1</label>
+    <input type="text" class="form-control"  placeholder="СЕЧЕНИЕ" name ="side1" value = <%= @side1 %>>
+    <small id="emailHelp" class="form-text text-muted">В миллиметрах.</small>
+
+  </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Сторона 2</label>
+    <input type="text" class="form-control"  placeholder="СЕЧЕНИЕ" name ="side2" value = <%= @side2 %>>
+    <small id="emailHelp" class="form-text text-muted">В миллиметрах.</small>
+
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Скорость потока воздуха</label>
+    <input type="text" class="form-control"  placeholder="СКОРОСТЬ" name ="speed" value = <%= @speed %>>
+    <small id="emailHelp" class="form-text text-muted">В метрах в секунду</small>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">РАСЧИТАТЬ</button>
+
+
+</form>
+
+
+
+<div class="alert alert-success" role="alert">
+  <%= @volume %> м3
+</div>
+
